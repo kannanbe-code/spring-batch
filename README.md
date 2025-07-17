@@ -97,3 +97,8 @@ src/main/resources/failed-records.log — Log of failed REST submissions
 
 failed_customers DB table — Detailed errors
 
+All tests use Spring Boot Test and mock WebClient/Email where needed. You can run them via:
+
+bash
+
+./mvnw test
