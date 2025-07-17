@@ -1,0 +1,26 @@
+package com.example.batchrest.listener;
+
+import org.springframework.batch.core.ExitStatus;
+import org.springframework.batch.core.StepExecution;
+import org.springframework.batch.core.StepExecutionListener;
+import org.springframework.stereotype.Component;
+
+import java.time.LocalDateTime;
+
+@Component
+public class JobAuditListener implements StepExecutionListener {
+
+    @Override
+    public void beforeStep(StepExecution stepExecution) {
+        System.out.println(">>> Step started at: " + LocalDateTime.now());
+    }
+
+    @Override
+    public ExitStatus afterStep(StepExecution stepExecution) {
+        System.out.println("<<< Step ended at: " + LocalDateTime.now());
+        System.out.println("Read Count: " + stepExecution.getReadCount());
+        System.out.println("Write Count: " + stepExecution.getWriteCount());
+        System.out.println("Skip Count: " + stepExecution.getSkipCount());
+        return stepExecution.getExitStatus();
+    }
+}
