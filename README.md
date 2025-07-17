@@ -97,8 +97,31 @@ src/main/resources/failed-records.log — Log of failed REST submissions
 
 failed_customers DB table — Detailed errors
 
+✅ Summary of All Test Types Added
+
+| Test File                       | Purpose                             |
+| ------------------------------- | ----------------------------------- |
+| `CustomerRepositoryTest`        | JPA insert/read test                |
+| `RestCustomerWriterTest`        | Retry + WebClient mocking           |
+| `EmailServiceTest`              | Validates email sending             |
+| `JobCompletionNotificationTest` | Auditing listener behavior          |
+| `SpringBatchIntegrationTest`    | Full job execution & data flow test |
+
+
 All tests use Spring Boot Test and mock WebClient/Email where needed. You can run them via:
 
 bash
 
 ./mvnw test
+
+✅ Step 2: Run Tests with Coverage
+From the root of your project, run:
+./mvnw clean verify
+
+This will:
+
+Run all your unit & integration tests
+
+Generate a code coverage report at:
+target/site/jacoco/index.html
+Open index.html in your browser to view line-by-line coverage of each class and method.
