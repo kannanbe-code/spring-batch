@@ -23,6 +23,20 @@ This Spring Boot + Spring Batch project reads customer data from a database in c
 
 ---
 
+| Feature                   | Description                             |
+| ------------------------- | --------------------------------------- |
+| ✅ SQL file-based query    | Multi-join complex SQL from `.sql` file |
+| ✅ Custom `ItemReader`     | Reads and maps SQL result rows to DTOs  |
+| ✅ Chunked REST submission | Sends each chunk to a remote API        |
+| ✅ Retry mechanism         | Uses `RetryTemplate` for API failures   |
+| ✅ Exception handling      | Logs, retries, and stores failed items  |
+| ✅ Step listener auditing  | Step-level logging and error metrics    |
+| ✅ Dockerfile              | For containerized app build & run       |
+| ✅ Test data               | H2 or PostgreSQL with dummy SQL data    |
+| ✅ Postman Collection      | To test API endpoints easily            |
+| ✅ README.md               | Setup, usage, and architecture overview |
+
+
 ## 🚀 How to Run
 
 bash
